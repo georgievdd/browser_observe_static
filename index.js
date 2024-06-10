@@ -4,7 +4,7 @@ const path = require('path')
 const morgan = require('morgan')
 const app = express()
 app.use((req, res, next) => {
-    const clientIp = req.headers['x-forwarded-for'] || req.connection?.remoteAddress;
+    const clientIp = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
     console.log(`Client IP: ${clientIp}`);
     next();
 });
